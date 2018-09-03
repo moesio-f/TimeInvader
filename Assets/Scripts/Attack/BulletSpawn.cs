@@ -15,12 +15,25 @@ public class BulletSpawn : MonoBehaviour
 		{
 			Create();
 		}
+
 	}
-	
+
 	public void Create()
 	{
 		pool.Add(Instantiate(pooledObject, this.transform));
 		pool[pool.Count - 1].SetActive(false);
+	}
+
+	public GameObject Spawn()
+	{
+		for(int i = 0; i < pool.Count; i++)
+		{
+			if(!pool[i].activeSelf)
+			{
+				return pool[i];
+			}
+		}
+		return null;
 	}
 
 }
