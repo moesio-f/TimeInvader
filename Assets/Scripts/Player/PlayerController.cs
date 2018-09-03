@@ -24,15 +24,15 @@ public class PlayerController : MonoBehaviour
 	{
 		x = CrossPlatformInputManager.GetAxis("Horizontal");
 		jumpPress = CrossPlatformInputManager.GetButton("Jump");
+		
 		if(CrossPlatformInputManager.GetButtonDown("Fire1"))
 		{
-			print("Oao");
-			anim.SetBool("XD", true);
+			anim.Play("Attack");
+			anim.SetBool("meleeAttack", true);
 		}
 		else if(CrossPlatformInputManager.GetButtonUp("Fire1"))
 		{
-			print("123124ao");
-			anim.SetBool("XD", false);
+			anim.SetBool("meleeAttack", false);
 
 		}
 	}
