@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraManager : MonoBehaviour {
+public class CameraManager : MonoBehaviour 
+{
+	[SerializeField] private Vector3 offset;
+	[SerializeField] private float smoothTime;
+	[SerializeField] private Transform target;
+	private float refVel = 0.0f;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	void LateUpdate () 
+	{
+		transform.position = target.position - offset;
 	}
 }

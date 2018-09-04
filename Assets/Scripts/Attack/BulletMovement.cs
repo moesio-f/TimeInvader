@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
-public class BulletMovement : MonoBehaviour {
+public class BulletMovement : MonoBehaviour 
+{
 
-	public Vector2 speed = new Vector2 (5, 0);
+	[SerializeField] private PlayerController player;
+	[SerializeField] private float speed = 5f;
 	private Rigidbody2D rbBullet;
 
-	void Start () 
+	void OnEnable()
 	{
-		rbBullet = GetComponent<Rigidbody2D>();
-		rbBullet.velocity = speed * this.transform.localScale.x;
+		if(rbBullet == null)
+			rbBullet = GetComponent<Rigidbody2D>();
+
+		rbBullet.velocity = new Vector2(speed,0) * this.transform.localScale.x;
 	}
 
 	void OnTriggerEnter2D(Collider2D coll)
 	{
+		rbBullet.velocity = new Vector2(0f,0);
 		gameObject.SetActive(false);
 	}
 }

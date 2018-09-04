@@ -9,11 +9,14 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float speed;
 	[SerializeField] private float jumpHeight;
 	[SerializeField] private Animator anim;
+	[SerializeField]private SpriteRenderer rend;
 	private float x;
 	private Rigidbody2D rigid;
 	private bool jumpPress;
 	private bool onGround = false;
+	private bool rightDir = true;
 	private Vector2 vel;
+
 
 	void Start () 
 	{
@@ -27,7 +30,14 @@ public class PlayerController : MonoBehaviour
 		
 		if(CrossPlatformInputManager.GetButtonDown("Fire1"))
 		{
-			anim.Play("Attack");
+			if(rightDir)
+			{
+				anim.Play("Attack");
+			}
+			else
+			{
+				anim.Play("AttackLeft");
+			}
 			anim.SetBool("meleeAttack", true);
 		}
 		else if(CrossPlatformInputManager.GetButtonUp("Fire1"))
@@ -46,6 +56,16 @@ public class PlayerController : MonoBehaviour
 		}
 
 		rigid.velocity = vel;
+		if(rigid.velocity.x > 0)
+		{
+			rend.flipX = false;
+			rightDir = false;
+		}
+		else if(rigid.velocity.x < 0)
+		{
+			rend.flipX = true;
+			rightDir = true;
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D point)
@@ -62,5 +82,10 @@ public class PlayerController : MonoBehaviour
 		{
 			onGround = false;
 		}
+	}
+
+	public float GetVelX()
+	{
+		return rigid.velocity.x;
 	}
 }

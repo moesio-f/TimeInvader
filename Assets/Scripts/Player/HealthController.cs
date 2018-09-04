@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthController : MonoBehaviour {
+public class HealthController : MonoBehaviour 
+{
 
 	public int amount; // Quantidade de vidas
 	public float recoveryTime; // Recuperação de vida
@@ -27,8 +28,8 @@ public class HealthController : MonoBehaviour {
 	{
 		while (true) 
 		{
-			Debug.Log ("Passou pela corotina");
-			if (current < amount) {
+			if (current < amount) 
+			{
 				Heal (1);
 			}
 			yield return new WaitForSeconds(recoveryTime);
@@ -49,7 +50,7 @@ public class HealthController : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collis) // Colisão com a bala
 	{
-		if(collis.collider.CompareTag("Bullet"))
+		if(collis.collider.CompareTag("Enemy"))
 		{
 			Damage(1);
 		}
