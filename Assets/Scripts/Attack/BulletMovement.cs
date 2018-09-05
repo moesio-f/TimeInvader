@@ -6,16 +6,37 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour 
 {
 
-	[SerializeField] private PlayerController player;
-	[SerializeField] private float speed = 5f;
+
+	[SerializeField] private float speedRef = 5f;
+
+	private SpriteRenderer playerRend;
+
 	private Rigidbody2D rbBullet;
+	private float positiveSpeed;
+	private float negativeSpeed;
+	private float finalSpeed;
+
 
 	void OnEnable()
 	{
+		positiveSpeed = speedRef;
+		negativeSpeed = speedRef * -1;
 		if(rbBullet == null)
 			rbBullet = GetComponent<Rigidbody2D>();
 
-		rbBullet.velocity = new Vector2(speed,0) * this.transform.localScale.x;
+		if(playerRend == null)
+			playerRend = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
+		
+		if(playerRend.flipX)
+		{
+			finalSpeed = negativeSpeed;
+		}
+		else
+		{
+			finalSpeed = positiveSpeed;
+		}
+
+		rbBullet.velocity = new Vector2(finalSpeed,0) * this.transform.localScale.x;
 	}
 
 	void OnTriggerEnter2D(Collider2D coll)
@@ -23,4 +44,5 @@ public class BulletMovement : MonoBehaviour
 		rbBullet.velocity = new Vector2(0f,0);
 		gameObject.SetActive(false);
 	}
+
 }

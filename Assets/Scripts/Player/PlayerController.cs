@@ -8,45 +8,28 @@ public class PlayerController : MonoBehaviour
 {
 	[SerializeField] private float speed;
 	[SerializeField] private float jumpHeight;
-	[SerializeField] private Animator anim;
 	[SerializeField]private SpriteRenderer rend;
 	private float x;
 	private Rigidbody2D rigid;
+	private CapsuleCollider2D colli;
+	private Vector2 colliderOffset; // <-- SOLUÇÃO pae
 	private bool jumpPress;
 	private bool onGround = false;
-	private bool rightDir = true;
 	private Vector2 vel;
 
 
 	void Start () 
 	{
 		rigid = GetComponent<Rigidbody2D>();
+		colli = GetComponent<CapsuleCollider2D>();
+		colliderOffset = colli.offset;
 	}
 
 	void Update() 
 	{
 		x = CrossPlatformInputManager.GetAxis("Horizontal");
 		jumpPress = CrossPlatformInputManager.GetButton("Jump");
-		
-		if(CrossPlatformInputManager.GetButtonDown("Fire1"))
-		{
-			if(rightDir)
-			{
-				anim.Play("Attack");
-			}
-			else
-			{
-				anim.Play("AttackLeft");
-			}
-			anim.SetBool("meleeAttack", true);
-		}
-		else if(CrossPlatformInputManager.GetButtonUp("Fire1"))
-		{
-			anim.SetBool("meleeAttack", false);
-
-		}
 	}
-
 	void FixedUpdate()
 	{
 		vel = new Vector2(x * speed, rigid.velocity.y);
@@ -59,12 +42,12 @@ public class PlayerController : MonoBehaviour
 		if(rigid.velocity.x > 0)
 		{
 			rend.flipX = false;
-			rightDir = false;
+			colli.offset = new Vector2(colliderOffset.x, colliderOffset.y);
 		}
 		else if(rigid.velocity.x < 0)
 		{
 			rend.flipX = true;
-			rightDir = true;
+			colli.offset = new Vector2(colliderOffset.x * -1, colliderOffset.y);
 		}
 	}
 
@@ -84,8 +67,5 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	public float GetVelX()
-	{
-		return rigid.velocity.x;
-	}
+
 }
