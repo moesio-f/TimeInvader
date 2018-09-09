@@ -7,6 +7,10 @@ TagManager:
   - Ground
   - Bullet
   - Weapon
+<<<<<<< HEAD
+=======
+  - Enemy
+>>>>>>> 76c8df02930bb985c647aa709fd626a1c0c58d7a
   layers:
   - Default
   - TransparentFX
