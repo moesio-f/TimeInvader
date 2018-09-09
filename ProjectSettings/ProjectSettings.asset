@@ -16,7 +16,7 @@ PlayerSettings:
   productName: 'Time invader: Steampunk'
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.19446424, g: 0.4339623, b: 0.20747156, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.043137256, g: 0.24313727, b: 0.08627451, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
