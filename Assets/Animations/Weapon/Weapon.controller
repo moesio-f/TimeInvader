@@ -13,17 +13,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-<<<<<<< HEAD
-    m_Controller: {fileID: 0}
-  - m_Name: XD
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-=======
     m_Controller: {fileID: 9100000}
->>>>>>> 76c8df02930bb985c647aa709fd626a1c0c58d7a
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -45,11 +35,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-<<<<<<< HEAD
-    m_ConditionEvent: XD
-=======
     m_ConditionEvent: meleeAttack
->>>>>>> 76c8df02930bb985c647aa709fd626a1c0c58d7a
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102719516293275912}
@@ -65,41 +51,25 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
-<<<<<<< HEAD
---- !u!1101 &1101780245874875004
-=======
 --- !u!1101 &1101844874251470446
->>>>>>> 76c8df02930bb985c647aa709fd626a1c0c58d7a
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-<<<<<<< HEAD
-  - m_ConditionMode: 1
-    m_ConditionEvent: XD
-    m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102399235926361806}
-=======
   - m_ConditionMode: 2
     m_ConditionEvent: meleeAttack
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102719516293275912}
->>>>>>> 76c8df02930bb985c647aa709fd626a1c0c58d7a
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
-<<<<<<< HEAD
-  m_ExitTime: 0.75
-=======
   m_ExitTime: 0.625
->>>>>>> 76c8df02930bb985c647aa709fd626a1c0c58d7a
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -140,12 +110,7 @@ AnimatorState:
   m_Name: Idle
   m_Speed: 1
   m_CycleOffset: 0
-<<<<<<< HEAD
-  m_Transitions:
-  - {fileID: 1101780245874875004}
-=======
   m_Transitions: []
->>>>>>> 76c8df02930bb985c647aa709fd626a1c0c58d7a
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -161,8 +126,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
-<<<<<<< HEAD
-=======
 --- !u!1102 &1102864520015640234
 AnimatorState:
   serializedVersion: 5
@@ -189,7 +152,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
->>>>>>> 76c8df02930bb985c647aa709fd626a1c0c58d7a
 --- !u!1107 &1107993876338258330
 AnimatorStateMachine:
   serializedVersion: 5
@@ -204,12 +166,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 1102719516293275912}
     m_Position: {x: 276, y: 240, z: 0}
-<<<<<<< HEAD
-=======
   - serializedVersion: 1
     m_State: {fileID: 1102864520015640234}
     m_Position: {x: 444, y: 348, z: 0}
->>>>>>> 76c8df02930bb985c647aa709fd626a1c0c58d7a
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
