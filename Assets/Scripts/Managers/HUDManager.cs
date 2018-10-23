@@ -10,10 +10,6 @@ public class HUDManager : MonoBehaviour
 	[SerializeField]private Text parts;
 	[SerializeField]private HealthController player;
 	
-	void Start()
-	{
-		Collectables.TurnZero();
-	}
 	void Update () 
 	{
 		life.text = "Vida: " + player.GetCurrent();

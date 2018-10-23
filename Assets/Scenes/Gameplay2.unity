@@ -167,6 +167,12 @@ Prefab:
       propertyPath: tagDammage
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 114167732139649066, guid: 10420d6f3ee03bf4482959c2b2b02ce7,
+        type: 2}
+      propertyPath: myPlayerData
+      value: 
+      objectReference: {fileID: 11400000, guid: c250721e984966b489673d584d0b5408,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10420d6f3ee03bf4482959c2b2b02ce7, type: 2}
   m_IsPrefabParent: 0
@@ -944,10 +950,10 @@ MonoBehaviour:
   offset: {x: 0, y: -0.3, z: 0}
   smoothTimeX: 0.3
   smoothTimeY: 0.05
-  Max_X: 0
-  Min_X: 0
-  Max_Y: 0
-  Min_Y: 0
+  Max_X: 5.7
+  Min_X: -8
+  Max_Y: 2
+  Min_Y: -3
   target: {fileID: 89103863}
 --- !u!1001 &1871491043
 Prefab:

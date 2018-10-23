@@ -6,16 +6,14 @@ using UnityStandardAssets.CrossPlatformInput;
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class PlayerController : MonoBehaviour 
 {
-	[SerializeField] private float speed;
-	[SerializeField] private float jumpHeight;
 	[SerializeField]private SpriteRenderer rend;
-	private float x;
-	private Rigidbody2D rigid;
-	private CapsuleCollider2D colli;
-	private Vector2 colliderOffset; // <-- SOLUÇÃO pae
+	[SerializeField]private PlayerData myPlayerData;
+	private float speed, jumpHeight, x;
 	private bool jumpPress;
 	private bool onGround = false;
-	private Vector2 vel;
+	private Rigidbody2D rigid;
+	private CapsuleCollider2D colli;
+	private Vector2 colliderOffset, vel;
 
 
 	void Start () 
@@ -23,6 +21,9 @@ public class PlayerController : MonoBehaviour
 		rigid = GetComponent<Rigidbody2D>();
 		colli = GetComponent<CapsuleCollider2D>();
 		colliderOffset = colli.offset;
+
+		speed = myPlayerData.MovSpeed();
+		jumpHeight = myPlayerData.JumpHeight();
 	}
 
 	void Update() 
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
 		vel = new Vector2(x * speed, rigid.velocity.y);
 		if(jumpPress && onGround)
 		{
-			vel += new Vector2 (0, jumpHeight);
+			vel = new Vector2 (vel.x, jumpHeight * speed);
 		}
 
 		rigid.velocity = vel;

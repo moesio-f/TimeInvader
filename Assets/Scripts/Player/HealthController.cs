@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour 
 {
-	public PlayerData myPlayerData;
-	[SerializeField]private int amount; // Quantidade de vidas
-	[SerializeField]private float recoveryTime; // Recuperação de vida
-	[SerializeField]private string tagDammage; // Tag que determina para quem ele recebe dano
+	[SerializeField] private PlayerData myPlayerData;
+	private string tagDammage; // Tag que determina para quem ele recebe dano
+	private int amount;
 	private int current; // Vida atual
 	private static bool firstGameplay = true;
 
 
 	void Start () // Coloca a vida inicial
 	{
-		Debug.Log(firstGameplay);
+		amount = myPlayerData.HealtAmount();
+		tagDammage = myPlayerData.TagDammaged();
+
 		if(firstGameplay)
 		{
 			current = amount; // Atribui o valor da vida inicial ao da vida máxima
@@ -24,6 +25,7 @@ public class HealthController : MonoBehaviour
 		{
 			current = myPlayerData.GetCurrentLife();
 		}
+
 		StartCoroutine(Recovery()); // Inicia a coroutina de regeneração
 	}
 
@@ -31,23 +33,20 @@ public class HealthController : MonoBehaviour
 	{
 		if(current <= 0)
 		{
+			firstGameplay = true;
             UnityEngine.SceneManagement.SceneManager.LoadScene("MenuPrincipal");
 		}
 	}
 
-	IEnumerator Recovery() // Coroutina para recuperar vida
+	void OnCollisionEnter2D(Collision2D collis) // Colisão com a bala
 	{
-		while (true) 
+		if(collis.collider.CompareTag(tagDammage))
 		{
-			if (current < amount) 
-			{
-				Heal (1);
-			}
-			yield return new WaitForSeconds(recoveryTime);
+			Damage(1);
 		}
 	}
 
-
+#region Functions
 	public void Damage(int value) // Receber dano
 	{
 		current -= value;
@@ -58,15 +57,6 @@ public class HealthController : MonoBehaviour
 		current += value;
 	}
 
-
-	void OnCollisionEnter2D(Collision2D collis) // Colisão com a bala
-	{
-		if(collis.collider.CompareTag(tagDammage))
-		{
-			Damage(1);
-		}
-	}
-
 	public int GetCurrent() // Obtém o valor da Vida atual
 	{
 		return current;
@@ -75,4 +65,18 @@ public class HealthController : MonoBehaviour
 	{
 		current = amount;
 	}
+
+		IEnumerator Recovery() // Coroutina para recuperar vida
+	{
+		yield return new WaitForSeconds(myPlayerData.RecoveryHealthTime());
+		while (true) 
+		{
+			if (current < amount) 
+			{
+				Heal (1);
+			}
+			yield return new WaitForSeconds(myPlayerData.RecoveryHealthTime());
+		}
+	}
+	#endregion Functions
 }

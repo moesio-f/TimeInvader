@@ -5,22 +5,20 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class BulletMovement : MonoBehaviour 
 {
-
-
 	[SerializeField] private float speedRef = 5f;
-
+	public static int bulletsShooted{get; private set;}
 	private SpriteRenderer playerRend;
-
 	private Rigidbody2D rbBullet;
-	private float positiveSpeed;
-	private float negativeSpeed;
-	private float finalSpeed;
+	private float positiveSpeed, negativeSpeed, finalSpeed;
 
 
 	void OnEnable()
 	{
+		bulletsShooted++;
+		
 		positiveSpeed = speedRef;
 		negativeSpeed = speedRef * -1;
+
 		if(rbBullet == null)
 			rbBullet = GetComponent<Rigidbody2D>();
 

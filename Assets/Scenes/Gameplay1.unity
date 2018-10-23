@@ -167,6 +167,12 @@ Prefab:
       propertyPath: recoveryTime
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 114167732139649066, guid: 10420d6f3ee03bf4482959c2b2b02ce7,
+        type: 2}
+      propertyPath: myPlayerData
+      value: 
+      objectReference: {fileID: 11400000, guid: c250721e984966b489673d584d0b5408,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10420d6f3ee03bf4482959c2b2b02ce7, type: 2}
   m_IsPrefabParent: 0
@@ -590,8 +596,8 @@ MonoBehaviour:
   offset: {x: 0, y: -0.3, z: 0}
   smoothTimeX: 0.3
   smoothTimeY: 0.05
-  Max_X: 15
-  Min_X: -0.07
+  Max_X: 13.8
+  Min_X: 0.5
   Max_Y: -0.5
   Min_Y: -10
   target: {fileID: 34022346}
@@ -1500,6 +1506,36 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 254491206}
+    - target: {fileID: 114574033096786298, guid: 275dfcdb4603aaf4895f8a19c2f89f9a,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114574033096786298, guid: 275dfcdb4603aaf4895f8a19c2f89f9a,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114574033096786298, guid: 275dfcdb4603aaf4895f8a19c2f89f9a,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114178409506012656, guid: 275dfcdb4603aaf4895f8a19c2f89f9a,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114178409506012656, guid: 275dfcdb4603aaf4895f8a19c2f89f9a,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114178409506012656, guid: 275dfcdb4603aaf4895f8a19c2f89f9a,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 275dfcdb4603aaf4895f8a19c2f89f9a, type: 2}
   m_IsPrefabParent: 0

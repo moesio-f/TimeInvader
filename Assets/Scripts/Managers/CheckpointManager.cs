@@ -19,7 +19,8 @@ public class CheckpointManager : MonoBehaviour
         }
         else if(this.gameObject.tag == "EndScene")
         {
-            myPlayerData.SetValues(current: myPlayerHealth.GetCurrent());
+            myPlayerData.SetValues(current: myPlayerHealth.GetCurrent(), parts:Collectables.partsCollecteds, shoots: BulletMovement.bulletsShooted, time: Time.timeSinceLevelLoad);
+            StopAllCoroutines();
             SceneManager.LoadScene("Gameplay2");
         }
 
