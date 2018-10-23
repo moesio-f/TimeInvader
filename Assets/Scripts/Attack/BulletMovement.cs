@@ -45,4 +45,10 @@ public class BulletMovement : MonoBehaviour
 		gameObject.SetActive(false);
 	}
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        rbBullet.velocity = new Vector2(0f, 0);
+        gameObject.SetActive(false);
+    }
+
 }

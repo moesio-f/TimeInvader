@@ -8,6 +8,11 @@ TagManager:
   - Bullet
   - Weapon
   - Enemy
+  - Canvas
+  - BulletManager
+  - EndScene
+  - Checkpoint
+  - LevelManager
   layers:
   - Default
   - TransparentFX
@@ -20,7 +25,7 @@ TagManager:
   - Player
   - Bullet
   - Weapon
-  - 
+  - PointColision
   - 
   - 
   - 

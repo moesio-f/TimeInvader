@@ -16,7 +16,7 @@ public class Collectables : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(typeBehaviour == 0)
+		if(typeBehaviour == 0 && other.CompareTag("Player"))
 		{
 			partsCollecteds++;
 			gameObject.SetActive(false);
@@ -26,4 +26,9 @@ public class Collectables : MonoBehaviour
 			}
 		}
 	}
+
+    public static void TurnZero()
+    {
+        partsCollecteds = 0;
+    }
 }

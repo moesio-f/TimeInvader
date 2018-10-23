@@ -6,10 +6,14 @@ using UnityEngine.UI;
 public class HUDManager : MonoBehaviour 
 {
 
-	public Text life;
-	public Text parts;
-	public HealthController player;
+	[SerializeField]private Text life;
+	[SerializeField]private Text parts;
+	[SerializeField]private HealthController player;
 	
+	void Start()
+	{
+		Collectables.TurnZero();
+	}
 	void Update () 
 	{
 		life.text = "Vida: " + player.GetCurrent();

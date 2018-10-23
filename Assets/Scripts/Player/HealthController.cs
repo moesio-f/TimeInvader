@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour 
 {
-
-	public int amount; // Quantidade de vidas
-	public float recoveryTime; // Recuperação de vida
-
+	public PlayerData myPlayerData;
+	[SerializeField]private int amount; // Quantidade de vidas
+	[SerializeField]private float recoveryTime; // Recuperação de vida
+	[SerializeField]private string tagDammage; // Tag que determina para quem ele recebe dano
 	private int current; // Vida atual
+	private static bool firstGameplay = true;
+
 
 	void Start () // Coloca a vida inicial
 	{
-		current = amount; // Atribui o valor da vida inicial ao da vida máxima
+		Debug.Log(firstGameplay);
+		if(firstGameplay)
+		{
+			current = amount; // Atribui o valor da vida inicial ao da vida máxima
+			firstGameplay = false;
+		}
+		else
+		{
+			current = myPlayerData.GetCurrentLife();
+		}
 		StartCoroutine(Recovery()); // Inicia a coroutina de regeneração
 	}
 
@@ -20,7 +31,7 @@ public class HealthController : MonoBehaviour
 	{
 		if(current <= 0)
 		{
-			Destroy (this.gameObject);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MenuPrincipal");
 		}
 	}
 
@@ -50,7 +61,7 @@ public class HealthController : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collis) // Colisão com a bala
 	{
-		if(collis.collider.CompareTag("Enemy"))
+		if(collis.collider.CompareTag(tagDammage))
 		{
 			Damage(1);
 		}
@@ -59,5 +70,9 @@ public class HealthController : MonoBehaviour
 	public int GetCurrent() // Obtém o valor da Vida atual
 	{
 		return current;
+	}
+	public void FullHealth() // Reseta o valor da vida
+	{
+		current = amount;
 	}
 }
