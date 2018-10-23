@@ -8,12 +8,6 @@ public class Collectables : MonoBehaviour
 	public int typeBehaviour = 0;
 	public static int partsCollecteds{ get; private set; }
 
-	void Start()
-	{
-		partsCollecteds = 0;
-	}
-
-
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(typeBehaviour == 0 && other.CompareTag("Player"))

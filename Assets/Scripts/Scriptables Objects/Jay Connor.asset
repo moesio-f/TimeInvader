@@ -11,7 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a4db32453102244ae8817920fa73ba, type: 3}
   m_Name: Jay Connor
   m_EditorClassIdentifier: 
-  healthCurrent: 0
+  healthAmount: 5
+  recoveryHealthTime: 18
+  movSepeed: 3
+  jumpHeight: 1.35
+  tagDammaged: Enemy
+  healthCurrent: 2
   partsCollecteds: 0
   shootedBullets: 0
-  playedTime: 0
+  playedTime: []

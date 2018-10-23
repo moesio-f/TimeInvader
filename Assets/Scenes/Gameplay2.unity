@@ -167,6 +167,12 @@ Prefab:
       propertyPath: tagDammage
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 114167732139649066, guid: 10420d6f3ee03bf4482959c2b2b02ce7,
+        type: 2}
+      propertyPath: myPlayerData
+      value: 
+      objectReference: {fileID: 11400000, guid: c250721e984966b489673d584d0b5408,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10420d6f3ee03bf4482959c2b2b02ce7, type: 2}
   m_IsPrefabParent: 0
