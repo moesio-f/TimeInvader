@@ -10,6 +10,7 @@ public class PuzzleInteraction : MonoBehaviour
     public SpriteRenderer target;
     private int count = 0;
     private bool key;
+    public LettersCounter lc;
     private bool onTouch = false;
 
 
@@ -26,6 +27,8 @@ public class PuzzleInteraction : MonoBehaviour
             count++;
             if (count > (images.Length - 1))
                 count = 0;
+
+            lc.Check();
         }
     }
 
