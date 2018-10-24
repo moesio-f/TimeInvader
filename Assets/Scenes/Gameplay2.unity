@@ -657,7 +657,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7c9f4c763d2e1c04ca203f8b484c4899, type: 3}
   - {fileID: 21300000, guid: 6233f885bcc3062419ec33ddede8daa8, type: 3}
   target: {fileID: 544588562}
-  letters: {fileID: 1738548343}
 --- !u!212 &544588562
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -803,6 +802,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &957641052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 957641054}
+  - component: {fileID: 957641053}
+  m_Layer: 0
+  m_Name: Balance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &957641053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 957641052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7581da9c7fe3ad642b0d1fc1641aef43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountShootsReference: 10
+  timeReferenceByLevel: []
+  myPlayerData: {fileID: 11400000, guid: c250721e984966b489673d584d0b5408, type: 2}
+  bossEnemyData: {fileID: 11400000, guid: 6ebf01b10c0ad314a9f5b37d09e91ee3, type: 2}
+--- !u!4 &957641054
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 957641052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.54552, y: 2.0691762, z: 18.710938}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &959717326
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,7 +895,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7c9f4c763d2e1c04ca203f8b484c4899, type: 3}
   - {fileID: 21300000, guid: 6233f885bcc3062419ec33ddede8daa8, type: 3}
   target: {fileID: 959717330}
-  letters: {fileID: 1738548343}
 --- !u!61 &959717329
 BoxCollider2D:
   m_ObjectHideFlags: 0

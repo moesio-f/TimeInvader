@@ -8,7 +8,7 @@ public class PlayerData : ScriptableObject
 	#region Pattern
 	[SerializeField] private int healthAmount;
 	[SerializeField] private float recoveryHealthTime;
-	[SerializeField] private float movSepeed;
+	[SerializeField] private float movSpeed;
 	[SerializeField] private float jumpHeight;
 	[SerializeField] private string tagDammaged;
 	#endregion Pattern
@@ -69,7 +69,7 @@ public class PlayerData : ScriptableObject
 		}
 		public float MovSpeed()
 		{
-			return movSepeed;
+			return movSpeed;
 		}
 		public float JumpHeight()
 		{

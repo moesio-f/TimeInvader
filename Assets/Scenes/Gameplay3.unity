@@ -964,7 +964,7 @@ Prefab:
         type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2081783180}
     - target: {fileID: 223586501361479368, guid: 275dfcdb4603aaf4895f8a19c2f89f9a,
         type: 2}
       propertyPath: m_Camera
@@ -1012,6 +1012,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114167732139649066, guid: 10420d6f3ee03bf4482959c2b2b02ce7,
+        type: 2}
+      propertyPath: myPlayerData
+      value: 
+      objectReference: {fileID: 11400000, guid: c250721e984966b489673d584d0b5408,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10420d6f3ee03bf4482959c2b2b02ce7, type: 2}
   m_IsPrefabParent: 0
@@ -1020,3 +1026,9 @@ Transform:
   m_PrefabParentObject: {fileID: 4551916036233654, guid: 10420d6f3ee03bf4482959c2b2b02ce7,
     type: 2}
   m_PrefabInternal: {fileID: 2081783178}
+--- !u!114 &2081783180 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114617423185855638, guid: 10420d6f3ee03bf4482959c2b2b02ce7,
+    type: 2}
+  m_PrefabInternal: {fileID: 2081783178}
+  m_Script: {fileID: 11500000, guid: e4ffa289dbe47724c96cc1602c205f8e, type: 3}

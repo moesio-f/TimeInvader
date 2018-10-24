@@ -13,10 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthAmount: 5
   recoveryHealthTime: 18
-  movSepeed: 3
+  movSpeed: 3
   jumpHeight: 1.35
   tagDammaged: Enemy
-  healthCurrent: 2
-  partsCollecteds: 0
-  shootedBullets: 0
-  playedTime: []
+  healthCurrent: 3
+  partsCollecteds: 1
+  shootedBullets: 3
+  playedTime:
+  - 6.9138
+  - 61.5896

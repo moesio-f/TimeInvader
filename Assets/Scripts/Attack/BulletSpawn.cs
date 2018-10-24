@@ -35,6 +35,7 @@ public class BulletSpawn : MonoBehaviour
 	{
 		pool.Add(Instantiate(pooledObject, this.transform));
 		pool[pool.Count - 1].SetActive(false);
+		BulletMovement.StartBulletShooted();
 	}
 
 	public GameObject Spawn(Transform playerPos)

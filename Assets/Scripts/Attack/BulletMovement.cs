@@ -15,7 +15,7 @@ public class BulletMovement : MonoBehaviour
 	void OnEnable()
 	{
 		bulletsShooted++;
-		
+
 		positiveSpeed = speedRef;
 		negativeSpeed = speedRef * -1;
 
@@ -48,5 +48,10 @@ public class BulletMovement : MonoBehaviour
         rbBullet.velocity = new Vector2(0f, 0);
         gameObject.SetActive(false);
     }
+
+	public static void StartBulletShooted()
+	{
+		bulletsShooted = 0;
+	}
 
 }
